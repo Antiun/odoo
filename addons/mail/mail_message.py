@@ -30,9 +30,13 @@ from openerp.osv import osv, orm, fields
 from openerp.tools import html_email_clean
 from openerp.tools.translate import _
 from HTMLParser import HTMLParser
+import threading
+from openerp.api import Environment
 
 _logger = logging.getLogger(__name__)
 
+from pprint import pprint, pformat
+import traceback
 
 """ Some tools for parsing / creating email fields """
 def decode(text):
@@ -791,6 +795,17 @@ class mail_message(osv.Model):
             message_id = tools.generate_tracking_message_id('private')
         return message_id
 
+    def _notify_in_background(self, cr, uid, newid, context, force_send, user_signature):
+        with Environment.manage():
+            _logger.info('mail.message::_notify_in_background: Get new cursor')
+            new_cr = self.pool.cursor()
+            _logger.info('mail.message::_notify_in_background: START')
+            self._notify(new_cr, uid, newid, context=context,
+                         force_send=force_send, user_signature=user_signature)
+            _logger.info('mail.message::_notify_in_background: END')
+            new_cr.close()
+            return True
+
     def create(self, cr, uid, values, context=None):
         context = dict(context or {})
         default_starred = context.pop('default_starred', False)
@@ -806,9 +821,16 @@ class mail_message(osv.Model):
 
         newid = super(mail_message, self).create(cr, uid, values, context)
 
-        self._notify(cr, uid, newid, context=context,
-                     force_send=context.get('mail_notify_force_send', True),
-                     user_signature=context.get('mail_notify_user_signature', True))
+        _logger.info('mail.message::create: context = ' + pformat(context))
+        threaded_notify = threading.Thread(
+            target=self._notify_in_background,
+            args=(cr, uid, newid, context,
+                  context.get('mail_notify_force_send', True),
+                  context.get('mail_notify_user_signature', True)))
+        threaded_notify.start()
+        # self._notify(cr, uid, newid, context=context,
+        #             force_send=context.get('mail_notify_force_send', True),
+        #             user_signature=context.get('mail_notify_user_signature', True))
         # TDE FIXME: handle default_starred. Why not setting an inv on starred ?
         # Because starred will call set_message_starred, that looks for notifications.
         # When creating a new mail_message, it will create a notification to a message
