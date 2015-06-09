@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import datetime
+import urllib
 import werkzeug
 
 from openerp import tools
@@ -232,38 +233,44 @@ class WebsiteBlog(http.Controller):
             },context=context)
         return response
 
-    def _blog_post_message(self, user, blog_post_id=0, **post):
+    def _blog_post_message(self, blog_post_id, message_content, **post):
         cr, uid, context = request.cr, request.uid, request.context
-        blog_post = request.registry['blog.post']
-        partner_obj = request.registry['res.partner']
+        BlogPost = request.registry['blog.post']
+        User = request.registry['res.users']
+        # for now, only portal and user can post comment on blog post.
+        if uid == request.website.user_id.id:
+            raise Warning(_('Public user cannot post comments on blog post.'))
+        # get the partner of the current user
+        user = User.browse(cr, uid, uid, context=context)
+        partner_id = user.partner_id.id
 
-        if uid != request.website.user_id.id:
-            partner_ids = [user.partner_id.id]
-        else:
-            partner_ids = blog_post._find_partner_from_emails(
-                cr, SUPERUSER_ID, 0, [post.get('email')], context=context)
-            if not partner_ids or not partner_ids[0]:
-                partner_ids = [partner_obj.create(cr, SUPERUSER_ID, {'name': post.get('name'), 'email': post.get('email')}, context=context)]
-
-        message_id = blog_post.message_post(
+        message_id = BlogPost.message_post(
             cr, SUPERUSER_ID, int(blog_post_id),
-            body=post.get('comment'),
+            body=message_content,
             type='comment',
             subtype='mt_comment',
-            author_id=partner_ids[0],
+            author_id=partner_id,
             path=post.get('path', False),
             context=context)
         return message_id
 
-    @http.route(['/blogpost/comment'], type='http', auth="public", methods=['POST'], website=True)
-    def blog_post_comment(self, blog_post_id=0, **post):
+    @http.route(['/blogpost/comment'], type='http', auth="public", methods=['GET', 'POST'], website=True)
+    def blog_post_comment(self, blog_post_id=0, **kw):
         cr, uid, context = request.cr, request.uid, request.context
-        if post.get('comment'):
-            user = request.registry['res.users'].browse(cr, uid, uid, context=context)
-            blog_post = request.registry['blog.post']
-            blog_post.check_access_rights(cr, uid, 'read')
-            self._blog_post_message(user, blog_post_id, **post)
-        return werkzeug.utils.redirect(request.httprequest.referrer + "#comments")
+        redirect_url = request.httprequest.referrer + "#comments"
+        if kw.get('comment'):
+            if not request.session.uid: # if not logged, redirect to the login form, keeping the url to post the comment
+                kw['comment'] = kw.get('comment').encode('utf8') # avoid crash from urlencode if accent
+                url = '/blogpost/comment/?blog_post_id=%s&%s' % (blog_post_id, urllib.urlencode(kw))
+                redirect_url = '/web/login?redirect=%s' % urllib.quote(url)
+            else:
+                blog_post_id = int(blog_post_id)
+                blog_post = request.registry['blog.post']
+                post = blog_post.browse(cr, uid, blog_post_id, context=context)
+                self._blog_post_message(blog_post_id, kw.get('comment'), **kw)
+                redirect_url = "/blog/%s/post/%s#comments" % (slug(post.blog_id), slug(post))
+        return werkzeug.utils.redirect(redirect_url)
+
 
     def _get_discussion_detail(self, ids, publish=False, **post):
         cr, uid, context = request.cr, request.uid, request.context
