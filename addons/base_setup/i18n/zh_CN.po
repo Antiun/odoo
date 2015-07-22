@@ -5,18 +5,19 @@
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014
 # jeffery chen fan <jeffery9@gmail.com>, 2015
-# likaiyuan2006 <likaiyuan2006@gmail.com>, 2015
+# 智源软件 <likaiyuan2006@gmail.com>, 2015
 # mrshelly <mrshelly@hotmail.com>, 2015
 # Xor3 <xor3@outlook.com>, 2015
-# zhang hao <zhanghao@jointd.com>, 2015
+# 卓忆科技 <zhanghao@jointd.com>, 2015
+# 卓忆科技 <zhanghao@jointd.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-21 14:07+0000\n"
-"PO-Revision-Date: 2015-06-22 04:08+0000\n"
+"PO-Revision-Date: 2015-07-17 06:53+0000\n"
 "Last-Translator: jeffery chen fan <jeffery9@gmail.com>\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/odoo-8/language/zh_CN/)\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/p/odoo-8/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -57,7 +58,7 @@ msgstr "应用"
 #. module: base_setup
 #: field:base.config.settings,module_google_drive:0
 msgid "Attach Google documents to any record"
-msgstr ""
+msgstr "附加谷歌文档到任何记录"
 
 #. module: base_setup
 #: view:base.config.settings:base_setup.view_general_configuration
@@ -267,7 +268,7 @@ msgstr "报价和销售订单"
 #. module: base_setup
 #: field:base.config.settings,font:0
 msgid "Report Font"
-msgstr ""
+msgstr "报表字体"
 
 #. module: base_setup
 #: field:sale.config.settings,module_sale:0
@@ -319,7 +320,7 @@ msgstr ""
 #. module: base_setup
 #: model:ir.actions.act_window,name:base_setup.action_partner_terminology_config_form
 msgid "Use another word to say \"Customer\""
-msgstr "称呼客户的另一种方式"
+msgstr "称呼“客户”的另一种方式"
 
 #. module: base_setup
 #: field:base.config.settings,module_auth_oauth:0

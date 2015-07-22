@@ -5,17 +5,21 @@
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014
 # jeffery chen fan <jeffery9@gmail.com>, 2015
+# 智源软件 <likaiyuan2006@gmail.com>, 2015
 # Shan Leiping <ccdos@163.com>, 2015
+# Talway <9010446@qq.com>, 2015
 # 卓忆科技 <zhanghao@jointd.com>, 2015
-# Talway <1473162392@qq.com>, 2015
+# 卓忆科技 <zhanghao@jointd.com>, 2015
+# Talway <9010446@qq.com>, 2015
+# 智源软件 <likaiyuan2006@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-21 14:07+0000\n"
-"PO-Revision-Date: 2015-07-04 06:58+0000\n"
-"Last-Translator: jeffery chen fan <jeffery9@gmail.com>\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/odoo-8/language/zh_CN/)\n"
+"PO-Revision-Date: 2015-07-18 03:25+0000\n"
+"Last-Translator: 智源软件 <likaiyuan2006@gmail.com>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/p/odoo-8/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -133,7 +137,7 @@ msgid ""
 "                stock rule.\n"
 "              </p>\n"
 "            "
-msgstr ""
+msgstr "<p class=\"oe_view_nocontent_create\">\n                点击创建一个生产订单。\n              </p><p>\n                生产订单，基于BoM表,\n                消耗原料并产出成品。\n              </p><p>\n                生产订单通常是自动生成于\n                客户需求或自动规则如最小库存规则。\n              </p>\n            "
 
 #. module: mrp
 #: model:ir.actions.act_window,help:mrp.mrp_property_action
@@ -180,7 +184,7 @@ msgid ""
 "                stock rule.\n"
 "              </p>\n"
 "            "
-msgstr ""
+msgstr "<p class=\"oe_view_nocontent_create\">\n                点击创建一个生产订单。\n              </p><p>\n                生产订单，基于BoM表,\n                消耗原料并产出成品。\n              </p><p>\n                生产订单通常是自动生成于\n                客户需求或自动规则如最小库存规则。\n              </p>\n            "
 
 #. module: mrp
 #: help:mrp.bom,product_efficiency:0
@@ -241,7 +245,7 @@ msgstr "循环总额"
 #. module: mrp
 #: selection:mrp.workcenter.load,measure_unit:0
 msgid "Amount in hours"
-msgstr "工时总额"
+msgstr "总工时"
 
 #. module: mrp
 #: field:mrp.workcenter.load,measure_unit:0
@@ -370,12 +374,12 @@ msgstr ""
 msgid ""
 "BoM \"%s\" contains a phantom BoM line but the product \"%s\" does not have "
 "any BoM defined."
-msgstr ""
+msgstr "BoM \"%s\" 包含一个虚拟BoM的产品,但产品 \"%s\" 没有定义BoM。"
 
 #. module: mrp
 #: field:mrp.bom.line,type:0
 msgid "BoM Line Type"
-msgstr ""
+msgstr "BoM类型"
 
 #. module: mrp
 #: field:mrp.bom,bom_line_ids:0
@@ -385,13 +389,13 @@ msgstr "物料清单行"
 #. module: mrp
 #: field:mrp.bom,type:0
 msgid "BoM Type"
-msgstr "物料清单类型"
+msgstr "BoM类型"
 
 #. module: mrp
 #: code:addons/mrp/stock.py:259
 #, python-format
 msgid "Can't find any generic Manufacture route."
-msgstr ""
+msgstr "未找到工艺路线"
 
 #. module: mrp
 #: view:change.production.qty:mrp.view_change_production_qty_wizard
@@ -542,7 +546,7 @@ msgstr "投料并产出"
 #. module: mrp
 #: view:mrp.product.produce:mrp.view_mrp_product_produce_wizard
 msgid "Consume Lines"
-msgstr ""
+msgstr "投料明细"
 
 #. module: mrp
 #: model:ir.actions.act_window,name:mrp.move_consume
@@ -560,13 +564,13 @@ msgstr "仅投料"
 #: view:mrp.production:mrp.mrp_production_form_view
 #: view:stock.move.consume:mrp.view_stock_move_consume_wizard
 msgid "Consume Products"
-msgstr "消耗的产品"
+msgstr "未投入的产品"
 
 #. module: mrp
 #: view:mrp.production:mrp.mrp_production_form_view
 #: field:mrp.production,move_lines2:0 view:website:mrp.report_mrporder
 msgid "Consumed Products"
-msgstr "已投料数量"
+msgstr "已投入产品"
 
 #. module: mrp
 #: field:stock.move,consumed_for:0
@@ -577,7 +581,7 @@ msgstr ""
 #: code:addons/mrp/report/price.py:141
 #, python-format
 msgid "Cost Price per Unit of Measure"
-msgstr "每一计量单位的成本价格"
+msgstr "成本单价"
 
 #. module: mrp
 #: code:addons/mrp/report/price.py:148
@@ -657,7 +661,7 @@ msgstr "逐日"
 #: view:mrp.bom:mrp.view_mrp_bom_filter
 #: view:mrp.bom.line:mrp.view_mrp_bom_line_filter
 msgid "Default Unit of Measure"
-msgstr "默认计量单位"
+msgstr "默认单位"
 
 #. module: mrp
 #: field:mrp.config.settings,module_product_manufacturer:0
@@ -710,7 +714,7 @@ msgstr "错误！"
 #. module: mrp
 #: view:mrp.production:mrp.mrp_production_form_view
 msgid "Extra Information"
-msgstr "额外信息"
+msgstr "其它信息"
 
 #. module: mrp
 #: help:mrp.workcenter,costs_cycle_account_id:0
@@ -785,7 +789,7 @@ msgstr "输入序号用于显示工作中心列表"
 #. module: mrp
 #: help:mrp.bom.line,sequence:0
 msgid "Gives the sequence order when displaying."
-msgstr ""
+msgstr "用于显示顺序"
 
 #. module: mrp
 #: view:mrp.property:mrp.view_mrp_property_search
@@ -812,7 +816,7 @@ msgstr "保留复杂的摘要(消息数量,……等)。为了插入到看板视
 #. module: mrp
 #: field:mrp.workcenter,costs_hour_account_id:0
 msgid "Hour Account"
-msgstr "时间科目"
+msgstr "工时科目"
 
 #. module: mrp
 #: code:addons/mrp/report/price.py:132
@@ -869,12 +873,12 @@ msgstr "生产中"
 #: view:mrp.routing:mrp.mrp_routing_search_view
 #: view:mrp.workcenter:mrp.view_mrp_workcenter_search
 msgid "Inactive"
-msgstr "未活动的"
+msgstr "不可用"
 
 #. module: mrp
 #: field:mrp.bom,position:0
 msgid "Internal Reference"
-msgstr "内部单号"
+msgstr "位置"
 
 #. module: mrp
 #: code:addons/mrp/mrp.py:289 code:addons/mrp/mrp.py:315
@@ -968,7 +972,7 @@ msgstr "管理工艺"
 #. module: mrp
 #: field:mrp.config.settings,module_mrp_repair:0
 msgid "Manage repairs of products "
-msgstr "关联产品的修理 "
+msgstr "管理产品的修理 "
 
 #. module: mrp
 #: field:mrp.config.settings,group_mrp_routings:0
@@ -994,7 +998,7 @@ msgstr ""
 #. module: mrp
 #: field:stock.warehouse,manufacture_to_resupply:0
 msgid "Manufacture in this Warehouse"
-msgstr ""
+msgstr "在此仓库制造"
 
 #. module: mrp
 #: model:ir.ui.menu,name:mrp.menu_mrp_manufacturing
@@ -1060,7 +1064,7 @@ msgstr "未完成的生产订单"
 #. module: mrp
 #: view:mrp.production:mrp.view_mrp_production_filter
 msgid "Manufacturing Orders which are currently in production."
-msgstr "正在生产过程中的制造订单"
+msgstr "生产中订单"
 
 #. module: mrp
 #: view:mrp.production:mrp.view_mrp_production_filter
@@ -1075,7 +1079,7 @@ msgstr "等待原材料的制造订单"
 #. module: mrp
 #: view:mrp.production:mrp.mrp_production_form_view
 msgid "Mark as Started"
-msgstr "标记为开始"
+msgstr "开始生产"
 
 #. module: mrp
 #: model:ir.ui.menu,name:mrp.menu_mrp_property
@@ -1126,7 +1130,7 @@ msgstr "新建"
 #: code:addons/mrp/procurement.py:127
 #, python-format
 msgid "No BoM exists for this product!"
-msgstr ""
+msgstr "此产品没有BoM表！"
 
 #. module: mrp
 #: view:website:mrp.report_mrporder
@@ -1204,7 +1208,7 @@ msgstr "订单"
 #. module: mrp
 #: model:ir.ui.menu,name:mrp.menu_mrp_production_order_action
 msgid "Order Planning"
-msgstr "制造单计划"
+msgstr "订单计划"
 
 #. module: mrp
 #: constraint:mrp.production:0
@@ -1224,12 +1228,12 @@ msgstr "上级工艺"
 #. module: mrp
 #: view:website:mrp.report_mrporder
 msgid "Partner Ref:"
-msgstr ""
+msgstr "客户订单号"
 
 #. module: mrp
 #: view:mrp.production:mrp.view_mrp_production_filter
 msgid "Pending"
-msgstr "等待中"
+msgstr "暂停"
 
 #. module: mrp
 #: selection:mrp.workcenter.load,time_unit:0
@@ -1244,7 +1248,7 @@ msgstr "每周"
 #. module: mrp
 #: selection:mrp.bom.line,type:0
 msgid "Phantom"
-msgstr ""
+msgstr "虚件"
 
 #. module: mrp
 #: help:mrp.bom.line,type:0
@@ -1252,7 +1256,7 @@ msgid ""
 "Phantom: this product line will not appear in the raw materials of "
 "manufacturing orders,it will be directly replaced by the raw materials of "
 "its own BoM, without triggeringan extra manufacturing order."
-msgstr ""
+msgstr "虚项：产品不会出现在生产单的消耗产品中,而是直接用它的BOM物料替代,不会触发额外生产订单."
 
 #. module: mrp
 #: model:ir.ui.menu,name:mrp.menu_mrp_planning
@@ -1280,7 +1284,7 @@ msgstr "打印产品成本结构"
 #. module: mrp
 #: view:website:mrp.report_mrporder
 msgid "Printing date:"
-msgstr ""
+msgstr "打印日期："
 
 #. module: mrp
 #: field:mrp.production,priority:0
@@ -1313,7 +1317,7 @@ msgstr "从一个生产订单生产几个产品"
 #: view:mrp.production:mrp.mrp_production_form_view
 #: field:mrp.production,move_created_ids2:0
 msgid "Produced Products"
-msgstr "产出的产品"
+msgstr "完成的产品"
 
 #. module: mrp
 #: model:ir.model,name:mrp.model_product_product
@@ -1336,7 +1340,7 @@ msgstr "产品成本构成"
 #. module: mrp
 #: field:mrp.production,move_prod_id:0
 msgid "Product Move"
-msgstr "产品移动"
+msgstr "调拨需求"
 
 #. module: mrp
 #: model:ir.model,name:mrp.model_mrp_product_price
@@ -1363,7 +1367,7 @@ msgstr "数量"
 #: field:mrp.production,product_qty:0
 #: field:mrp.production.product.line,product_qty:0
 msgid "Product Quantity"
-msgstr "产品数量"
+msgstr "数量"
 
 #. module: mrp
 #: field:mrp.bom,product_rounding:0 field:mrp.bom.line,product_rounding:0
@@ -1379,14 +1383,14 @@ msgstr "产品模板"
 #: field:mrp.bom.line,product_uos:0
 #: field:mrp.production.product.line,product_uos:0
 msgid "Product UOS"
-msgstr "产品销售单位"
+msgstr "销售单位"
 
 #. module: mrp
 #: help:mrp.bom.line,product_uos:0
 msgid ""
 "Product UOS (Unit of Sale) is the unit of measurement for the invoicing and "
 "promotion of stock."
-msgstr "销售单位是用于开发票和推销产品的计量单位"
+msgstr "销售单位是用于开发票和销售产品的计量单位"
 
 #. module: mrp
 #: field:mrp.bom.line,product_uos_qty:0
@@ -1396,7 +1400,7 @@ msgstr "产品销售单位数量"
 #. module: mrp
 #: field:mrp.production.product.line,product_uos_qty:0
 msgid "Product UOS Quantity"
-msgstr "产品的销售单位数量"
+msgstr "销售单位数量"
 
 #. module: mrp
 #: field:mrp.bom,product_uom:0 field:mrp.bom.line,product_uom:0
@@ -1404,17 +1408,17 @@ msgstr "产品的销售单位数量"
 #: field:mrp.production.product.line,product_uom:0
 #: field:stock.move.consume,product_uom:0
 msgid "Product Unit of Measure"
-msgstr "产品计量单位"
+msgstr "计量单位"
 
 #. module: mrp
 #: field:mrp.production,product_uos:0
 msgid "Product UoS"
-msgstr "产品销售单位"
+msgstr "销售单位"
 
 #. module: mrp
 #: field:mrp.production,product_uos_qty:0
 msgid "Product UoS Quantity"
-msgstr "产品的销售单位数量"
+msgstr "销售单位数量"
 
 #. module: mrp
 #: field:mrp.bom,product_id:0
@@ -1429,13 +1433,13 @@ msgstr ""
 #. module: mrp
 #: view:mrp.production:mrp.view_mrp_production_filter
 msgid "Production"
-msgstr "生产单编码"
+msgstr "生产单"
 
 #. module: mrp
 #: view:mrp.routing:mrp.mrp_routing_search_view
 #: field:mrp.routing,location_id:0
 msgid "Production Location"
-msgstr "产品库位"
+msgstr "生产库位"
 
 #. module: mrp
 #: model:ir.actions.report.xml,name:mrp.action_report_production_order
@@ -1451,12 +1455,12 @@ msgstr "生产单号:"
 #. module: mrp
 #: field:stock.move,production_id:0
 msgid "Production Order for Produced Products"
-msgstr ""
+msgstr "产成品的生产订单"
 
 #. module: mrp
 #: field:stock.move,raw_material_production_id:0
 msgid "Production Order for Raw Materials"
-msgstr ""
+msgstr "原料投到的生产单"
 
 #. module: mrp
 #: model:ir.model,name:mrp.model_mrp_production_product_line
@@ -1481,7 +1485,7 @@ msgstr ""
 #. module: mrp
 #: view:mrp.production:mrp.view_mrp_production_filter
 msgid "Production started late"
-msgstr "未准时开始生产"
+msgstr "延迟开始的生产"
 
 #. module: mrp
 #: view:mrp.production:mrp.view_production_gantt
@@ -1499,7 +1503,7 @@ msgstr "产品"
 #. module: mrp
 #: field:mrp.product.produce,consume_lines:0
 msgid "Products Consumed"
-msgstr ""
+msgstr "产品投入"
 
 #. module: mrp
 #: view:mrp.production:mrp.mrp_production_form_view
@@ -1516,7 +1520,7 @@ msgstr "未完工数量"
 #: view:mrp.production:mrp.mrp_production_form_view
 #: field:mrp.production,move_created_ids:0
 msgid "Products to Produce"
-msgstr "要生产的成品"
+msgstr "产成品"
 
 #. module: mrp
 #: model:ir.actions.act_window,name:mrp.mrp_property_action
@@ -1575,7 +1579,7 @@ msgstr ""
 #. module: mrp
 #: view:website:mrp.report_mrporder
 msgid "Quantity:"
-msgstr ""
+msgstr "数量："
 
 #. module: mrp
 #: field:mrp.production,location_src_id:0
@@ -1585,7 +1589,7 @@ msgstr "原料库位"
 #. module: mrp
 #: view:mrp.production:mrp.view_mrp_production_filter
 msgid "Ready"
-msgstr "准备好"
+msgstr "就绪"
 
 #. module: mrp
 #: selection:mrp.production,state:0
@@ -1596,7 +1600,7 @@ msgstr "准备生产"
 #: view:mrp.bom:mrp.mrp_bom_form_view field:mrp.bom,code:0
 #: field:mrp.production,name:0
 msgid "Reference"
-msgstr "生产订单编号"
+msgstr "编号"
 
 #. module: mrp
 #: sql_constraint:mrp.production:0
@@ -1612,7 +1616,7 @@ msgstr "生成这张生产订单的前置单据编号"
 #. module: mrp
 #: help:mrp.bom,position:0
 msgid "Reference to a position in an external plan."
-msgstr "外部计划位置的参考"
+msgstr "位置的编号"
 
 #. module: mrp
 #: field:mrp.workcenter,resource_id:0
@@ -1689,7 +1693,7 @@ msgstr ""
 #. module: mrp
 #: field:mrp.production,date_planned:0
 msgid "Scheduled Date"
-msgstr "下单日期"
+msgstr "计划日期"
 
 #. module: mrp
 #: view:mrp.production:mrp.view_mrp_production_filter
@@ -1704,19 +1708,19 @@ msgstr ""
 #. module: mrp
 #: view:mrp.production:mrp.view_mrp_production_filter
 msgid "Scheduled Month"
-msgstr ""
+msgstr "按月"
 
 #. module: mrp
 #: view:mrp.production:mrp.mrp_production_form_view
 #: view:mrp.production.product.line:mrp.mrp_production_product_form_view
 #: view:mrp.production.product.line:mrp.mrp_production_product_tree_view
 msgid "Scheduled Products"
-msgstr "安排的产品"
+msgstr "需求的产品"
 
 #. module: mrp
 #: field:mrp.production,product_lines:0
 msgid "Scheduled goods"
-msgstr "安排的货物"
+msgstr "需求的产品"
 
 #. module: mrp
 #: view:mrp.production:mrp.mrp_production_form_view
@@ -1736,12 +1740,12 @@ msgstr "搜索物料清单"
 #. module: mrp
 #: view:mrp.bom.line:mrp.view_mrp_bom_line_filter
 msgid "Search Bill Of Material Components"
-msgstr ""
+msgstr "搜索物料清单组件"
 
 #. module: mrp
 #: view:mrp.production:mrp.view_mrp_production_filter
 msgid "Search Production"
-msgstr "搜索产品"
+msgstr "搜索生产"
 
 #. module: mrp
 #: view:mrp.workcenter:mrp.view_mrp_workcenter_search
@@ -1768,12 +1772,12 @@ msgstr "选择时间单位"
 #: field:mrp.production.workcenter.line,sequence:0
 #: field:mrp.routing.workcenter,sequence:0 view:website:mrp.report_mrporder
 msgid "Sequence"
-msgstr "序列"
+msgstr "序号"
 
 #. module: mrp
 #: selection:mrp.bom,type:0
 msgid "Set"
-msgstr "集合"
+msgstr "套件"
 
 #. module: mrp
 #: help:mrp.bom,type:0
@@ -1951,7 +1955,7 @@ msgstr "该工作中心要完成指定工艺的操作所花费的小时数"
 #. module: mrp
 #: view:mrp.product.produce:mrp.view_mrp_product_produce_wizard
 msgid "To Consume"
-msgstr ""
+msgstr "消耗"
 
 #. module: mrp
 #: code:addons/mrp/report/price.py:162 code:addons/mrp/report/price.py:213
@@ -2008,7 +2012,7 @@ msgstr "计量单位"
 msgid ""
 "Unit of Measure (Unit of Measure) is the unit of measurement for the "
 "inventory control"
-msgstr "计量单位是存货的 计量单位"
+msgstr "计量单位是库存单位"
 
 #. module: mrp
 #: field:mrp.bom,message_unread:0 field:mrp.production,message_unread:0
@@ -2056,12 +2060,12 @@ msgstr "有效期到"
 #. module: mrp
 #: help:mrp.bom.line,date_start:0 help:mrp.bom.line,date_stop:0
 msgid "Validity of component. Keep empty if it's always valid."
-msgstr ""
+msgstr "组件有效期。留空表示始终有效。"
 
 #. module: mrp
 #: help:mrp.bom,date_start:0 help:mrp.bom,date_stop:0
 msgid "Validity of this BoM. Keep empty if it's always valid."
-msgstr ""
+msgstr "物料清单有效期。留空表示始终有效。"
 
 #. module: mrp
 #: view:mrp.bom:mrp.view_mrp_bom_filter
@@ -2141,7 +2145,7 @@ msgstr "当处理该产品的销售单时，发运单将以原料来替代成品
 #: help:stock.warehouse,manufacture_to_resupply:0
 msgid ""
 "When products are manufactured, they can be manufactured in this warehouse."
-msgstr ""
+msgstr "当产品为制造品,由此仓库生产."
 
 #. module: mrp
 #: help:mrp.production,state:0
@@ -2256,7 +2260,7 @@ msgid ""
 "Without this module: A + B + C -> D.\n"
 "With this module: A + B + C -> D + E.\n"
 "-This installs the module mrp_byproduct."
-msgstr ""
+msgstr "您可以在BoM里配置副产品。\n不安装此模块时: A + B + C -> D。\n安装此模块后: A + B + C -> D + E。\n-安装模块 mrp_byproduct。"
 
 #. module: mrp
 #: code:addons/mrp/mrp.py:339
@@ -2264,13 +2268,13 @@ msgstr ""
 msgid ""
 "You can not delete a Bill of Material with running manufacturing orders.\n"
 "Please close or cancel it first."
-msgstr ""
+msgstr "正在生产中的物料清单不可删除,请先关闭或取消生产单."
 
 #. module: mrp
 #: code:addons/mrp/stock.py:42
 #, python-format
 msgid "You must assign a serial number for the product %s"
-msgstr ""
+msgstr "您必须为该产品%s分配一个序列号"
 
 #. module: mrp
 #: view:product.template:mrp.view_mrp_product_template_form_inherited

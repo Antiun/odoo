@@ -12,9 +12,9 @@ msgstr ""
 "Project-Id-Version: Odoo 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-21 14:07+0000\n"
-"PO-Revision-Date: 2015-07-04 06:58+0000\n"
-"Last-Translator: mrshelly <mrshelly@hotmail.com>\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/odoo-8/language/zh_CN/)\n"
+"PO-Revision-Date: 2015-07-17 07:21+0000\n"
+"Last-Translator: leangjia <liangjia@qq.com>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/p/odoo-8/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -116,7 +116,7 @@ msgstr "修改工作"
 msgid ""
 "Changing the date will let this entry appear in the timesheet of the new "
 "date."
-msgstr ""
+msgstr "改变此条目的内容也会让计工单中相应条目的内容更新。"
 
 #. module: hr_timesheet
 #: help:account.analytic.account,use_timesheets:0
@@ -279,7 +279,7 @@ msgstr "标识"
 msgid ""
 "If you want to reinvoice working time of employees, link this employee to a "
 "service to determinate the cost price of the job."
-msgstr ""
+msgstr "如果您想为员工的工时开票。请关联此员工到一个服务从而确定这个工作的成本。"
 
 #. module: hr_timesheet
 #: view:hr.analytic.timesheet:hr_timesheet.hr_timesheet_line_form
