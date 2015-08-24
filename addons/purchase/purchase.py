@@ -746,8 +746,12 @@ class purchase_order(osv.osv):
             #we don't round the price_unit, as we may want to store the standard price with more digits than allowed by the currency
             price_unit = self.pool.get('res.currency').compute(cr, uid, order.currency_id.id, order.company_id.currency_id.id, price_unit, round=False, context=context)
         res = []
+        if order.location_id.usage == 'customer':
+            name = order_line.product_id.with_context(dict(context or {}, lang=order.dest_address_id.lang)).name
+        else:
+            name = order_line.name or ''
         move_template = {
-            'name': order_line.name or '',
+            'name': name,
             'product_id': order_line.product_id.id,
             'product_uom': order_line.product_uom.id,
             'product_uos': order_line.product_uom.id,
@@ -1436,6 +1440,9 @@ class procurement_order(osv.osv):
 
         return qty, price
 
+    def update_origin_po(self, cr, uid, po, proc, context=None):
+        pass
+
     def make_po(self, cr, uid, ids, context=None):
         """ Resolve the purchase from procurement, which may result in a new PO creation, a new PO line creation or a quantity change on existing PO line.
         Note that some operations (as the PO creation) are made as SUPERUSER because the current user may not have rights to do it (mto product launched by a sale for example)
@@ -1478,6 +1485,7 @@ class procurement_order(osv.osv):
 
                         if new_qty > po_line.product_qty:
                             po_line_obj.write(cr, SUPERUSER_ID, po_line.id, {'product_qty': new_qty, 'price_unit': new_price}, context=context)
+                            self.update_origin_po(cr, uid, po_rec, procurement, context=context)
                             sum_po_line_ids.append(procurement.id)
                     else:
                         line_vals.update(order_id=po_id)
