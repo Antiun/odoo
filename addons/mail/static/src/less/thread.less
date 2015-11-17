@@ -8,7 +8,8 @@
     }
 
     .o_thread_date_separator {
-        margin-bottom: 15px;
+        margin-top: 15px;
+        margin-bottom: 30px;
         border-bottom: solid @gray-lighter 2px;
         text-align: center;
 
@@ -19,6 +20,20 @@
             padding: 0 10px;
             font-weight: bold;
             background: white;
+        }
+    }
+
+    .o_thread_new_messages_separator {
+        margin-bottom: 15px;
+        border-bottom: solid lighten(@odoo-brand-primary, 15%) 1px;
+        text-align: right;
+        .o_thread_separator_label {
+            position: relative;
+            top: 8px;
+            padding: 0 10px;
+            background: white;
+            color: lighten(@odoo-brand-primary, 15%);
+            font-size: smaller;
         }
     }
 
@@ -110,5 +125,10 @@
                 padding: 4px;
             }
         }
+    }
+    .o_thread_title {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 20px;
     }
 }

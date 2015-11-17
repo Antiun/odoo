@@ -67,9 +67,10 @@
 
     .o_mail_chat_content {
         .o-flex(1, 1, 100%);
-        height: 100%;
         .o-flex-display();
         .o-flex-flow(column, nowrap);
+        height: 100%;
+        position: relative;
 
         .o_mail_thread {
             .o-flex(1, 0, 0);
@@ -83,7 +84,7 @@
         }
         .o_chat_composer {
             .o-flex(0, 0, auto);
-            .o-webclient-padding(@top: 10px, @bottom: 5px);
+            .o-webclient-padding(@top: 2px, @bottom: 8px);
 
             .o_composer {
                 .o-flex-display();
@@ -98,6 +99,18 @@
                 .o_composer_buttons {
                     .o-flex(0, 0, auto);
                 }
+            }
+        }
+        .o_mail_snackbar {
+            .o-position-absolute(15px, 15px);
+            padding-top: 10px;
+            padding-bottom: 10px;
+            cursor: pointer;
+            background-color: darken(@gray, 8%);
+            color: white;
+            .o_snackbar_undo {
+                margin-left: 8px;
+                padding: 8px;
             }
         }
     }
