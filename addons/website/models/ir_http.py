@@ -31,7 +31,7 @@ class ir_http(orm.AbstractModel):
 
     def _serve_attachment(self):
         response = super(ir_http, self)._serve_attachment()
-        if response.mimetype == 'application/octet-stream':
+        if response and response.mimetype == 'application/octet-stream':
             # Try to set mimetype via attachment miemtype field
             domain = [('type', '=', 'binary'), ('url', '=', request.httprequest.path)]
             attach = self.pool['ir.attachment'].search_read(
